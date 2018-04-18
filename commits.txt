@@ -1,0 +1,619 @@
+commit 5833a295e035701f7de910f1bb8aaebc29cccb7f
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Wed Mar 21 20:34:57 2018 -0400
+
+    final iteration 2 version
+
+commit a60dff4c615d1e76c1241da6dfa25c78522c1074
+Merge: f1d93f5 ae8f1fe
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Wed Mar 21 19:31:48 2018 -0400
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit f1d93f5853e880b424e9b0ece641ce1c5f82b58a
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Wed Mar 21 19:30:44 2018 -0400
+
+    tags functionality added to backend
+
+commit ae8f1febe73db5b58d2fa9583531c8a4ecd8d6e0
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 19:21:31 2018 -0400
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+    
+    pushing ratings/trending, getting post ids still a problem
+
+commit fcc88e2ab3c63b018dce9e88b16f1ac6cc354fbd
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 17:52:47 2018 -0400
+
+    added username sessions
+
+commit 4b8ba6ee2bcd0fd675480b6551c2f15fdb147513
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 15:41:40 2018 -0400
+
+    fixed small singup bug
+
+commit 0776de941cffab7c037dbac59bf9f35e751f4b8c
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 15:33:07 2018 -0400
+
+    fixed posting bug
+
+commit 72fc344b39b8cadda093f85fbdec28edc38237c5
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 13:25:13 2018 -0400
+
+    bug in settings
+
+commit 39f6153470ac62b7deb104729318398e0fbe83aa
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 12:52:08 2018 -0400
+
+    added comments functionaility
+
+commit 966b9a373c15d9768e1d80c7aff60ba08fb18f8d
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 04:02:32 2018 -0400
+
+    fixed answer modal
+
+commit c1402db6249efd9b838c9418ba1e9c7e177ecbb9
+Merge: d88f739 61c44ba
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 03:36:23 2018 -0400
+
+    resetting
+
+commit d88f7393d7a1b1111f176b8506a2409b8a8f6de8
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 03:34:22 2018 -0400
+
+    slight fix to comment visual
+
+commit 61c44ba9d2533b9703adac280545ee344033645d
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 02:25:51 2018 -0400
+
+    can view trending tags
+
+commit ce4d75ba28db6e22569527a05ed4f3f805eec421
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 01:53:51 2018 -0400
+
+    bug
+
+commit b15acbc406b0f323c339d177c8eeb522b2f2a6fb
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 01:46:09 2018 -0400
+
+    minor changes for trending
+
+commit ca5d37a5d0335a112dfba165031db8e760b8b3d0
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 01:18:02 2018 -0400
+
+    Add files via upload
+
+commit e5e57205f45e4bd34ea6f3db8f797f6af85ec3b1
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 21 01:10:09 2018 -0400
+
+    small change in db_api
+
+commit da551f01c5003ed1ce1973e68ea682da8cc1a3ac
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 00:59:59 2018 -0400
+
+    Update index.js
+
+commit ddde7818f9cc4fe1b3ede10c4886f58c98aa58ff
+Author: brilou <bjluo1@gmail.com>
+Date:   Wed Mar 21 00:59:33 2018 -0400
+
+    Update index.js
+    
+    pushed method for getting recent tags
+
+commit bf02be7d9de3c81750e687740ba06c9a2407d9b7
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Wed Mar 21 00:31:29 2018 -0400
+
+    added backend for post  ratings
+
+commit 8ed5f29acd3a607f54bdcb53f1197c0b9be6e280
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 23:34:58 2018 -0400
+
+    Answer button functionality
+
+commit c1232c0f58004e07e32d56d7372b73cff434795d
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 22:53:46 2018 -0400
+
+    getAllCommentIDs
+
+commit b9e78a5cb056b931d6b266d9bff77b56018aa051
+Merge: 99cac73 ae69d8c
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 22:43:17 2018 -0400
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit 99cac730c843d94cf145fabaac96c8783dc87f6d
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 22:42:26 2018 -0400
+
+    improve comment frontend
+
+commit ae69d8cc389877204f28bb4584ff3ea4e6800b68
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 22:14:09 2018 -0400
+
+    posting an answer
+
+commit 6748feef2f447c87612985559029b51e40f7ba27
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 22:04:04 2018 -0400
+
+    postanswer functionality
+
+commit 2d097818bc9c4e440e91dc4ae076787e8539195b
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 22:03:32 2018 -0400
+
+    fixed commenting a bit
+
+commit 9089daada6808237dec8a3b5a88fe2705ec39b06
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 21:51:41 2018 -0400
+
+    comments section front end
+
+commit 39162739475aff42487108bf3502451218e3ae7b
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 21:40:05 2018 -0400
+
+    comment support added
+
+commit abeda4f6368c37efa25c042034cf89fc6cb84b71
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Mar 20 21:00:35 2018 -0400
+
+    getallTags added
+
+commit 3bceae8edc407ab7a5fb50a618fe9ab7235d0e7d
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Mar 20 20:49:33 2018 -0400
+
+    syntax error fixed
+
+commit 9a1656ad21b0d9170f0975c7e311f7c1a586b3e1
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Mar 20 20:47:44 2018 -0400
+
+    fixed small bug
+
+commit 888e778f92516d4572913898393dbfa63c9e7b49
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Mar 20 20:43:03 2018 -0400
+
+    added getAllCommentIDs
+
+commit 2bd163eab6e2731194363a2e9dca46eff5f8f864
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Mar 20 20:25:40 2018 -0400
+
+    added getcommentid and getUsername
+
+commit c45ecd50d3bf21c8d4578e1329873233a9ad20e8
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 19:23:39 2018 -0400
+
+    displays new posts live
+
+commit 0586635d7962425418a58160e5c94b8e1f4a4d0e
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 19:19:03 2018 -0400
+
+    displays all posts
+
+commit fe65ad89e1b1fff10bebb7ba5e390d628e90df42
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 18:06:02 2018 -0400
+
+    sending post & user to home.ejs
+
+commit d70a9c7715f2d137e3735d7c68f9c943897ea2da
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 17:52:42 2018 -0400
+
+    pushing to db
+
+commit e9fe84d9aef5f93bae571b2c7583559eeeab054b
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 17:09:58 2018 -0400
+
+    data pulling
+
+commit 8fd16f82738c85212f2d1d0a1eaf4f5988fa54f1
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Mar 20 15:56:42 2018 -0400
+
+    posting works
+
+commit d8d0d417e99ca417f3d0e98eed50a27d2a8e97a6
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Tue Mar 20 15:28:57 2018 -0400
+
+    button fix, awaiting resolution for postid
+
+commit 851659b74c0abaaa9cce13ceca93c0df75f7f6a4
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 15:07:28 2018 -0400
+
+    Update signup.css
+    
+    re-added the arrow css stuff
+
+commit f7d71f29b90b318eef20bccf53cd3f8de8cf806e
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 14:51:06 2018 -0400
+
+    minor button rearrangment in login.ejs
+
+commit c7431995d06e4516a3ba1e12722f4b13fd385a50
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 14:47:24 2018 -0400
+
+    updated settings persistence
+
+commit d1e4b8925335c1cf6d82ebcf833ad0f7b5a340e3
+Merge: c08353a 1bd7740
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Tue Mar 20 13:57:28 2018 -0400
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit c08353afa054e97c7f48de9422f4c46f2401f440
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Tue Mar 20 13:54:58 2018 -0400
+
+    added tags to new posts
+
+commit 1bd7740b01a9dc18c16f6c478f39dfd92e45aae4
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Mar 20 13:44:37 2018 -0400
+
+    persistence in user info & incomplete post functionality
+
+commit 32249d100889cb589772e88a97257a53bbf942eb
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:48:51 2018 -0400
+
+    Add files via upload
+
+commit 6ed41337fec61b252ffb637a60315cd525278a99
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:47:52 2018 -0400
+
+    Add files via upload
+
+commit 8d753aedc7a7539202d3ff8b98a97a0a7dc0e5f3
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:44:51 2018 -0400
+
+    Delete signup.css
+
+commit 1439a2e0397f60605034a22800beb6a1cde0f2c0
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:44:42 2018 -0400
+
+    Delete home.ejs
+
+commit 275b4d92555a569347aed5d7263345bbb1f84d66
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:35:18 2018 -0400
+
+    Add files via upload
+
+commit 255ecca34ddef140c6192321819b959696b29a91
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:34:38 2018 -0400
+
+    Add files via upload
+
+commit af78b8a10062b64912c5c383704b50d31f0013cd
+Author: brilou <bjluo1@gmail.com>
+Date:   Tue Mar 20 03:31:41 2018 -0400
+
+    Add files via upload
+    
+    pushing what i have rn. added upvote/downvote functionality for posts barring database stuff.
+    
+    one bug: when new posts are created, the reputation doesn't change when upvoting/downvoting, can't figure out why
+
+commit b679dff33333a6440bd255f003a49e312f226821
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Mon Mar 19 22:56:14 2018 -0400
+
+    script added - buggy
+
+commit 3cf6755186eefe7bcc3fee1850ce1709372e59e2
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Mon Mar 19 21:16:20 2018 -0400
+
+    added more instructions on how to view stuff in db in index.js
+
+commit aa21056e483cc0091eddf12a1dc39979bed401ce
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Mon Mar 19 21:06:39 2018 -0400
+
+    added anonymous posts to database/api
+
+commit 8a39ce40c4aee161f2d8006458a04b5913e2e578
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Mon Mar 19 20:58:42 2018 -0400
+
+    api in public/js
+
+commit f8bf257e79a433a88622f1c9edf1090cbf33b0ab
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Mon Mar 19 20:56:22 2018 -0400
+
+    test users/comments
+
+commit 365791268ab731854b443ace3a3ab7bcb9d6c033
+Merge: e224039 50c980c
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Sun Mar 18 18:00:16 2018 -0400
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit e22403962fb60185193ccd8e885c87f9ff092b32
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Sun Mar 18 18:00:08 2018 -0400
+
+    modal adjustments
+
+commit 50c980caa23d5ef562e13668e1fc672aad51042c
+Merge: b97ce95 f7b827f
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Sun Mar 18 17:51:59 2018 -0400
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit b97ce950c07b280db54f718c80784e1cc3398e19
+Author: Elom <pensieveofisidore@gmail.com>
+Date:   Sun Mar 18 17:50:31 2018 -0400
+
+    added a user profile data file
+    
+    Contains all the data associated with each user. Serves mostly as a template for implementing profile pages
+
+commit f7b827f3d4ecaabeddefe62e45f97a8b48847e37
+Author: darrylberonque <darrylb@github.com>
+Date:   Sun Mar 18 11:22:16 2018 -0400
+
+    fixed sign up & login err
+
+commit 862c17f05e559c2ce331be69398d787866b5a5c0
+Author: darrylberonque <darrylb@github.com>
+Date:   Sun Mar 18 10:45:12 2018 -0400
+
+    .
+
+commit 77159f0d3c1c4d25f207cdfda3e5c8207e5b420f
+Author: darrylberonque <darrylb@github.com>
+Date:   Sun Mar 18 10:44:05 2018 -0400
+
+    adding mysql module
+
+commit f80ae6538cd5ba1f8b2610981a71744520f10f4d
+Merge: de5b371 ad8f193
+Author: darrylberonque <darrylb@github.com>
+Date:   Sun Mar 18 10:38:15 2018 -0400
+
+    misplaced DS_Store
+
+commit de5b371b54b8bbf82d71a7922fc955a9b4b98bc5
+Author: darrylberonque <darrylb@github.com>
+Date:   Sun Mar 18 10:35:33 2018 -0400
+
+    .
+
+commit ad8f19387078ce033a8600f8c88a094f9a965063
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Sun Mar 18 09:14:48 2018 -0400
+
+    database is linked to signup and login
+
+commit 23b5b608e0d9a2c2a53c6b8a52c3e78620a541c9
+Author: darrylberonque <darrylb@github.com>
+Date:   Sun Mar 18 02:34:09 2018 -0400
+
+    edit profile picture function
+
+commit 27697580fb7783fc91c7e6023017b140711b7fc9
+Author: darrylberonque <darrylb@github.com>
+Date:   Sat Mar 17 14:42:37 2018 -0400
+
+    fixed facebook auth
+
+commit 61e3877ab5bc36a5518eef903b3d9829af927098
+Author: darrylberonque <darrylb@github.com>
+Date:   Fri Mar 16 14:17:45 2018 -0400
+
+    added editability
+
+commit 67c60c2e00d78eb9b78343637ab96f7f1b947950
+Author: darrylberonque <darrylb@github.com>
+Date:   Fri Mar 16 12:01:42 2018 -0400
+
+    profile and settings page
+
+commit 503db5d2095f3d8948c1f5c2baf000f6eeb814a5
+Author: darrylberonque <darrylb@github.com>
+Date:   Thu Mar 15 19:48:05 2018 -0400
+
+    added updated front end
+
+commit 02c39bfb3a3eb0a93ffba0791a904413942e6ce9
+Merge: 97616ce 36b87ef
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 14 00:34:18 2018 -0400
+
+    Converting to ejs
+
+commit 97616ce4ba2578bc25ee74d457326958ea8a8c58
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Mar 14 00:32:01 2018 -0400
+
+    Changed views to ejs
+
+commit 36b87ef605753058dfdab214d6e2658f5d762cee
+Author: edumenyo <edumenyo@users.noreply.github.com>
+Date:   Thu Feb 22 22:04:42 2018 -0500
+
+    merged navigation bar into the main page
+
+commit 243aeb67df9300c81aa91bf112643bea8be356af
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Feb 21 19:59:08 2018 -0500
+
+    Final home page changes
+
+commit 0c884c735b2b8e9c755dbab248dd3d55f30d382f
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Feb 21 19:52:12 2018 -0500
+
+    Re-updating post and facebook logout
+
+commit 0770fee4cf82efd7b41f084e615e3c0f7530ba43
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Wed Feb 21 19:44:17 2018 -0500
+
+    updated modal text color
+
+commit 9382bc2fa76f1d14b8435397e3db7854f1f2783d
+Author: edumenyo <edumenyo@users.noreply.github.com>
+Date:   Wed Feb 21 19:40:54 2018 -0500
+
+    Add files via upload
+    
+    The updated main page of the website, implementing stories 5 (homepage) and 6 (navigation).
+
+commit 58df6ee0488e7e95e0fb829fa86ebdfb00b0ac36
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Wed Feb 21 19:37:28 2018 -0500
+
+    fixed some broken href links
+
+commit 8198b7ce7cc35aa330dd3460f38481b0a21410e7
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Wed Feb 21 19:32:04 2018 -0500
+
+    added pic
+
+commit e32cc312e964562d9707a9ed5a50750ab8c71975
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Wed Feb 21 19:30:39 2018 -0500
+
+    temps ejs updated
+
+commit a00198a65dd4089ab4bfd3377dd4843b162d27f7
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Feb 21 16:26:02 2018 -0500
+
+    Including facebook session
+
+commit 213ef328c1150719a32f69464c46edfcf68c0494
+Author: darrylberonque <darrylb@github.com>
+Date:   Wed Feb 21 13:55:20 2018 -0500
+
+    Added sessions and updated navbar
+
+commit eafc3423b236a192460043040fb57a3e2882d95c
+Merge: 8ccc281 28dd465
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Feb 20 23:23:46 2018 -0500
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit 8ccc281147c8d464ae8454e4baba69ad46aee853
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Feb 20 23:23:12 2018 -0500
+
+    Fixed signup error and updated signup
+
+commit 28dd46551336990d1262c6143e640e8817f607e2
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Feb 20 23:16:10 2018 -0500
+
+    fixed the links to some dead buttons
+
+commit 3110329cb19e43b42e77291fecaef8e4253be0dc
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Tue Feb 20 22:44:22 2018 -0500
+
+    welcome page looks nice and links to login page
+
+commit 009d8d66a4d98969e35c5addbbd776b9d9f14905
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Feb 20 21:59:35 2018 -0500
+
+    Login and User accounts page added
+
+commit 40b62063ada3f4ce769328933fd843a6812dccae
+Merge: d84df2f 38d00b7
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Feb 20 00:18:19 2018 -0500
+
+    Merge branch 'master' of https://github.com/cis-upenn/350S18-46-GymApp
+
+commit d84df2fb72accb99369feb141b046dcfd2fb242d
+Author: darrylberonque <darrylb@github.com>
+Date:   Tue Feb 20 00:15:14 2018 -0500
+
+    Adding login/logout functionality
+
+commit 38d00b7ae88adcdd028b3a9a1ed49b0071e8d510
+Author: Semih Cantürk <canturks@seas.upenn.edu>
+Date:   Mon Feb 19 23:19:14 2018 -0500
+
+    modal popup added
+
+commit debdc8fdb033c6b3c906de5cbfd8237ab7dffbb2
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Mon Feb 19 22:35:09 2018 -0500
+
+    fixed small error
+
+commit d4c57490fcc99d74a745a39951d12cdb20b68718
+Author: William Tam <willtam@seas.upenn.edu>
+Date:   Mon Feb 19 22:17:08 2018 -0500
+
+    runs on server
+
+commit cd27b46d4ca0c5f193f361de8cbd399adcd7c5e2
+Author: edumenyo <edumenyo@users.noreply.github.com>
+Date:   Fri Feb 16 13:39:16 2018 -0500
+
+    index.html & its stylesheet
+    
+    The first front-end of the website, laid out using Bootstrap
+
+commit 7b867e1cdb238b46cb0b7c6bfbb868af03e496ff
+Author: darrylberonque <darrylb@github.com>
+Date:   Thu Feb 15 20:08:57 2018 -0500
+
+    Sign up page
+
+commit 0043c5ba4e026650bb64682cb9f46a7acab6df0a
+Author: doheejkim <doheekim@sas.upenn.edu>
+Date:   Sun Jan 28 12:38:21 2018 -0500
+
+    Initial commit

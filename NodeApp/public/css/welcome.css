@@ -1,0 +1,47 @@
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+
+
+body {
+  background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+  ),
+  url("../assets/penn4.jpg") no-repeat center center fixed;
+  height: 100%; 
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.button {
+    background-color: #000080;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 40px 2px;
+    cursor: pointer;
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+h1 {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+p {
+  margin: 0;
+  font-size: 1rem;
+}

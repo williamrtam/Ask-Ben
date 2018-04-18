@@ -1,0 +1,149 @@
+<!doctype html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="css/profile.css" type="text/css" rel="stylesheet">
+
+    <!-- Optional JavaScript - ->
+    <!- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>AskBen: Settings</title>
+  </head>
+
+  <body>
+  	<div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand" href="/home"><img src="/assets/ben_frank.png" style="width: 50px; height: 45px;"></a>
+        <div class="collapse navbar-collapse" id="navbarText">
+          
+          <ul class="main-nav navbar-nav mr-auto">
+            <li class="home nav-item">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="profile nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="settings nav-item">
+              <a class="nav-link" href="/settings">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notifications</a>
+            </li>
+          </ul>
+
+          <span class="navbar-text">
+            <form method="post" action="/logout">
+              <button type="submit" class="btn btn-light">Signout</button>         
+            </form>
+          </span>
+
+        </div>
+      </nav>
+    </div>
+
+  	<div style="margin-left: 20%; margin-right: 20%; margin-top: 50px;">
+  		<h5> Account Settings</h5>
+  		<hr>
+  		<div>
+  			<h6> Change your email: </h6>
+  			<div> 
+  				<div style="display: inline-block;"> Email address: </div> &emsp; &emsp; &emsp; &emsp; &emsp; <div id="email" style="display: inline-block;" contenteditable="false"> sample@gmail.com  </div> &emsp; <span> <a class="edit-account" id="edit-email" href="#"> Edit </a> </span>
+  			</div>
+  		</div>
+  		<hr>
+  		<div>
+  			<h6> Change your password: </h6>
+  			<div> 
+  				<div style="display: inline-block;"> Password: </div> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; <div id="password" style="display: inline-block;" contenteditable="false"> ••••••••••••••••  </div> &emsp; <span> <a class="edit-account" id="edit-password" href="#"> Edit </a> </span>
+  			</div>
+  		</div>
+  		<hr>
+  		<div>
+  			<h6> Hide Information: </h6>
+  			<div> 
+  				
+  			</div>
+  		</div>
+  	</div>
+
+  	<script type="text/javascript">
+
+          $( document ).ready(function() { 
+            var email = (<%- JSON.stringify(email) %> != null ? <%- JSON.stringify(email) %> : 'none');
+            var password = (<%- JSON.stringify(password) %> != null ? <%- JSON.stringify(password) %> : '••••••••••••••••');
+
+            console.log(email);
+            console.log(password);
+
+            $('#email').text(email);
+            $('#password').text('••••••••••••••••');
+
+            $('.settings').addClass('active');
+            $(".nav li").on("click", function() {
+              $(".nav li").removeClass("active");
+              $(this).addClass("active");
+            });
+
+            $('.edit-account').on('click', function() {
+              var id = '';
+              var field = '';
+
+              if (this.id == 'edit-email') {
+                id = '#email';
+                field = 'email';
+              } else if(this.id == 'edit-password') {
+                id = '#password';
+                field = 'password';
+                $('#password').text(password);
+              } 
+
+              if ($(id).attr('contenteditable') == 'false') {
+                console.log('false');
+                $(id).attr('contenteditable', true);
+                $(id).css('outline', '1px solid');
+              } else {
+                console.log('true');
+                $(id).attr('contenteditable', false);
+                $(id).css('outline', '0px transparent');
+              }
+
+              $(id).keypress(function(e) {
+                if (e.which == 13) {
+                  console.log('Pressed enter');
+                  $(id).attr('contenteditable', false);
+                  $(id).css('outline', '0px transparent');
+
+                  var value = $(id).text();
+                  var isPassword = 'no';
+
+                  if (field == 'password') {
+                    password = $(id).text();
+                    isPassword = 'yes';
+                    $(id).text('••••••••••••••••');
+                  } else {
+                    email = $(id).text();
+                  }
+
+                  $.ajax({
+                    type: "POST",
+                    url: '/updateInfo',
+                    data: {email: email, update: value, ispassword: isPassword, field: field}
+                  });
+                }
+              });
+
+            });
+          });
+
+    </script>
+
+  </body>
