@@ -1,0 +1,195 @@
+*{
+	color: white
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  opacity: 0.4;
+  border-bottom: 15px solid black;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  opacity: 0.4;
+  border-top: 15px solid black;
+}
+
+.bg{
+	background: url('/assets/askben2.jpg') no-repeat; 
+	width: 100%; 
+	height: 100vh;
+}
+
+.color-black {
+	color: black;
+}
+
+.form-container{
+	border: 1px solid black; 
+	padding: 50px 50px; 
+	border-radius: 21px 21px 21px 21px;
+	-moz-border-radius: 21px 21px 21px 21px;
+	-webkit-border-radius: 21px 21px 21px 21px;
+	border: 0px solid #000000;
+	background:  #000033;
+	-webkit-box-shadow: -1px 4px 39px 17px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 4px 39px 17px rgba(0,0,0,0.75);
+	box-shadow: -1px 4px 39px 17px rgba(0,0,0,0.75);
+	margin-top: 15vh;
+}
+
+#shield {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px; 
+    width: 87; 
+    text-align: center;
+}
+
+.h1{
+	text-align: center;
+}
+
+.ordered_tags li {
+	color: black;
+}
+
+.ordered_tags {
+	color: black;
+}
+
+.signup{
+	margin-top: 5vh;
+}
+
+.errorMessage {
+	color: white;
+	text-shadow: 1px 1px 6px rgba(255, 0, 0, 1);
+	margin-top: 6vh;
+	margin-bottom: 0vh;
+	text-align: center;
+}
+
+.background_home {
+	width: 100%; 
+	height: 100vh;
+	color: blue;
+}
+
+
+.card-question {
+	font-size: 20px;
+}
+
+.card-poster {
+	font-size: 16px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+}
+
+.card-head {
+	padding-bottom: 0px;h
+}
+
+.card-col {
+	color: black;
+}
+
+.card-spacing {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.card-content {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.hr {
+	margin-bottom: 10px;
+}
+
+.card-comments{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.question-card {
+	margin-top: 50px;
+}
+
+
+.question-input {
+	padding-bottom: 0px;
+}
+
+
+.feed-title {
+	padding-top: 50px;
+	padding-left: 150px;
+}
+
+.feed-control {
+	padding-left: 150px;
+}
+
+.feed-text {
+	color: black
+}
+
+.vote {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: middle;
+}
+
+.link-size {
+	font-size: 15px;
+	padding-top: 2.5px;
+}
+
+.answer{
+	height: 25px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.comment {
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+.modal {
+	position: absolute;
+    top: 150px;
+    right: 70px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+.moveup {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.modal-margins {
+	margin-top: 5px;
+	margin-bottom: 10px
+}
+
+
+
+
+
+

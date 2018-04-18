@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <link href="css/profile.css" type="text/css" rel="stylesheet">
+
+    <!-- Optional JavaScript - ->
+    <!- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>AskBen: Profile</title>
+</head>
+<body style="background-color: white">
+
+<script>
+
+  var post = <%- JSON.stringify(post) %>;
+  var maxLoad = 10;
+
+  console.log('Query: ');
+  // console.log(query);
+
+  $(document).ready(function () {
+    // HANDLING SEARCHES
+    var foundUsers;
+    var foundPosts;
+
+    $("#askben-search").on("input", function () {
+      $('.search-item').remove();
+      $("#askben-search-see-more").hide();
+      if ($("#askben-search").val().trim().length !== 0) {
+        $.ajax({
+          type: "POST",
+          url: "/search",
+          data: {
+            content: $("#askben-search").val(),
+            num_results: 5,
+            new_page: false
+          },
+          success: function (data) {
+            foundUsers = data.foundUsers;
+            console.log('USERS HERE')
+            console.log(foundUsers);
+
+            foundPosts = data.foundPosts;
+            console.log('POSTS HERE');
+            console.log(foundPosts);
+
+            if (foundPosts !== null) {
+              if (foundPosts.length > 0) {
+                for (var i = foundPosts.length - 1; i >= 0; i--) {
+                  $('#askben-search-dropdown').prepend('<div class="dropdown-item card search-item post-result"'
+                    + 'reputation="0" toggled="0" style="padding:0"> <div class="card-body ' +
+                    'card-head text-justify"><a style="display:none">(#' + (i+1) + ')</a> <h5 class="card-link card-col card-question" ' +
+                    'href="#">' + foundPosts[i].header + '</h5> <p class="card-text card-col " ' +
+                    'href="#">' + foundPosts[i].email + '</p> <p class="card-text card-col">' +
+                    foundPosts[i].content + '</p> <div> </div> </div> </div>');
+                }
+
+                $('.post-result').click(function (event) {
+                  event.preventDefault();
+                  console.log("post selected");
+                  console.log($(this).find("a").text());
+                  var i = parseInt($(this).find("a").text().substring(2, 3)) - 1;
+                  console.log("post #: " + i);
+                  window.location.href = ("/viewPost/" + foundPosts[i].post_id);
+                });
+
+              }
+            } else {
+              console.log("no posts found");
+            }
+
+            if (foundUsers !== null) {
+              if (foundUsers.length > 0) {
+                for (var i = foundUsers.length - 1; i >= 0; i--) {
+                  if (foundUsers[i].username === "undefined") continue;
+                  $('#askben-search-dropdown').prepend("<a class='dropdown-item search-item' " +
+                    "href='#'>"
+                    +foundUsers[i].username +"</a>");
+                }
+              }
+            } else {
+              console.log("no users found");
+            }
+
+            if (foundPosts.length > 0 || foundUsers.length > 0){
+              $("#askben-search-see-more").show(100);
+            }
+          }
+        });
+
+      }
+    });
+
+    $('#askben-search-btn').click(function (event) {
+      event.preventDefault();
+      if ($("#askben-search").val().trim().length !== 0) {
+        console.log("search button clicked");
+        window.location.href = ("/viewSearch/" + $("#askben-search").val());
+      }
+    });
+
+    $('#askben-search-see-more').click(function (event) {
+      event.preventDefault();
+      if ($("#askben-search").val().trim().length !== 0) {
+        console.log("see more button clicked");
+        window.location.href = ("/viewSearch/" + $("#askben-search").val());
+      }
+
+    });
+
+    $("#askben-search-see-more").hide();
+
+    $('.main-container').prepend('<div class="card post-result bg-light text-dark" ' +
+      'style="margin: 1rem; width:auto; border-radius: 5px; border-width: medium;' +
+      ' border-color: #C4DFFB"> <div class="card-body ' +
+      'card-head text-justify" style="padding:0.75rem"><h6 class="card-link card-col ' +
+      'card-question" href="#">' + post.header + '</h6> <p class="card-text ' +
+      'card-col " style="display:block" href="#">' + post.email + '</p> <p class="card-text card-col"' +
+      ' style="overflow-wrap: break-word">' +
+      post.content + '</p> <div> </div> </div> </div>');
+
+  });
+</script>
+
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home"><img src="/assets/ben_frank.png" style="width: 50px; height: 45px;"></a>
+        <div class="collapse navbar-collapse" id="navbarText" >
+
+            <ul class="main-nav navbar-nav mr-auto">
+                <li class="home nav-item">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/settings">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <div id="notification-list" class="dropdown">
+                        <a id="dropdownMenuButton" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notifications</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <ul id="notifications" style="float: left; padding-left: 0px;">
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li class="nav-item">
+                    <form class="navbar-form">
+                        <div class="form-group form-inline dropdown show">
+                            <input type="search" class="form-control dropdown-toggle" id="askben-search" placeholder="search" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown">
+                            <input type="image" id="askben-search-btn" alt="sch" src="https://png.icons8.com/windows/50/000000/search.png" width="20px" style="max-width:50%; margin-left: 2px; height: auto">
+
+                            <div class="dropdown-menu" id="askben-search-dropdown" aria-labelledby="dropdownMenuButton">
+                                <div class="btn btn-info" id="askben-search-see-more" style="width:100%">
+                                    <h6 class="" href="#">See More</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+
+            <span class="navbar-text">
+            <form method="post" action="/logout">
+              <button type="submit" class="btn btn-light">Signout</button>
+            </form>
+          </span>
+
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid main-container offset-3 col-6" style="margin-top: 30px;">
+
+    <!--<div class="modal" tabindex="-1" role="dialog" id="profile-modal">-->
+    <!--<div class="modal-dialog" role="document">-->
+    <!--<div class="modal-content">-->
+    <!--<div class="modal-header">-->
+    <!--<h5 class="modal-title"> Change your profile image </h5>-->
+    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+    <!--<span aria-hidden="true">&times;</span>-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--<div class="modal-body">-->
+    <!--<input id="profile-image" type="image" name="profilePicture" src="/assets/profile_pic.png" style="width: 200px; height: 200px; display: block; margin: auto;" onchange="updateProfileImage()">-->
+    <!--</div>-->
+    <!--<div class="modal-footer">-->
+
+    <!--<form class="form-container" action="/upload" method="post">-->
+    <!--<input id="input-image" type="file" name="picture" style="float: left;" onchange="previewFile()">-->
+    <!--<div>-->
+    <!--<button id = "upload-btn" type="submit" class="btn btn-primary" data-dismiss="modal" style="width: 208px; height: 35px; margin-top: 15px;"> Upload </button>-->
+    <!--</div>-->
+
+    <!--</form>-->
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="card text-hide" style="width: 100%; margin-top: 15px; font-size: 18px;">-->
+    <!--<div class="card-header" style="padding-bottom: 3px; padding-top: 3px;">-->
+    <!--Analytics-->
+    <!--</div>-->
+    <!--<div class="card-body">-->
+    <!--Sample data for reputation-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+      });
+    </script>
+
+</body>

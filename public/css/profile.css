@@ -1,0 +1,43 @@
+.main-container {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+
+.profile-card {
+	margin-top: 50px;
+}
+
+.profile-pic {
+	border-color: gray;
+	border-style: solid;
+}
+
+.profile-info {
+	color: black;
+}
+
+.profile-pic:hover body{
+	background-color: red;
+}
+
+.modal {
+	position: absolute;
+    top: 150px;
+    right: 70px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+
+.upload-image {
+	width: 160px;
+	height: 30px;
+	border-radius: 7px;
+	background-color: #006bb3;
+	color: white;
+	cursor: pointer;
+}

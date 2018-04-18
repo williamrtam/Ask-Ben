@@ -1,0 +1,606 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--     <link href="../public/css/signup.css" type="text/css" rel="stylesheet"> 
+ -->
+
+    <style type="text/css">
+      *{
+        color: white
+      }
+
+      .arrow-up {
+        width: 0; 
+        height: 0; 
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        opacity: 0.4;
+        border-bottom: 15px solid black;
+      }
+
+      .arrow-down {
+        width: 0; 
+        height: 0; 
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        opacity: 0.4;
+        border-top: 15px solid black;
+      }
+
+      .bg{
+        background: url('/assets/askben2.jpg') no-repeat; 
+        width: 100%; 
+        height: 100vh;
+      }
+
+      .form-container{
+        border: 1px solid black; 
+        padding: 50px 50px; 
+        border-radius: 21px 21px 21px 21px;
+        -moz-border-radius: 21px 21px 21px 21px;
+        -webkit-border-radius: 21px 21px 21px 21px;
+        border: 0px solid #000000;
+        background:  #000033;
+        -webkit-box-shadow: -1px 4px 39px 17px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 4px 39px 17px rgba(0,0,0,0.75);
+        box-shadow: -1px 4px 39px 17px rgba(0,0,0,0.75);
+        margin-top: 15vh;
+      }
+
+      #shield {
+        display: block;
+          margin-left: auto;
+          margin-right: auto;
+          height: 100px; 
+          width: 87; 
+          text-align: center;
+      }
+
+      .h1{
+        text-align: center;
+      }
+
+      .ordered_tags li {
+        color: black;
+      }
+
+      .ordered_tags {
+        color: black;
+      }
+
+      .signup{
+        margin-top: 5vh;
+      }
+
+      .errorMessage {
+        color: white;
+        text-shadow: 1px 1px 6px rgba(255, 0, 0, 1);
+        margin-top: 6vh;
+        margin-bottom: 0vh;
+        text-align: center;
+      }
+
+      .background_home {
+        width: 100%; 
+        height: 100vh;
+        color: blue;
+      }
+
+
+      .card-question {
+        font-size: 20px;
+      }
+
+      .card-poster {
+        font-size: 16px;
+        padding-bottom: 0px;
+        padding-top: 10px;
+      }
+
+      .card-head {
+        padding-bottom: 0px;h
+      }
+
+      .card-col {
+        color: black;
+      }
+
+      .card-spacing {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card-content {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      .hr {
+        margin-bottom: 10px;
+      }
+
+      .card-comments{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+
+      .question-card {
+        margin-top: 50px;
+      }
+
+
+      .question-input {
+        padding-bottom: 0px;
+      }
+
+
+      .feed-title {
+        padding-top: 50px;
+        padding-left: 150px;
+      }
+
+      .feed-control {
+        padding-left: 150px;
+      }
+
+      .feed-text {
+        color: black
+      }
+
+      .vote {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: middle;
+      }
+
+      .link-size {
+        font-size: 15px;
+        padding-top: 2.5px;
+      }
+
+      .answer{
+        height: 25px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      .comment {
+        padding-top: 5px;
+        padding-bottom: 0px;
+      }
+
+      .modal {
+        position: absolute;
+          top: 150px;
+          right: 70px;
+          bottom: 0;
+          left: 0;
+          z-index: 10040;
+          overflow: auto;
+          overflow-y: auto;
+      }
+
+      .modal-margins {
+        margin-top: 5px;
+        margin-bottom: 10px
+      }
+
+    </style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>AskBen: Tags</title>
+    
+  </head>
+
+  <body style="background-color: white;"> 
+    <script>
+      var allTags = <%- JSON.stringify(tags) %>;
+      var upvotes = <%- JSON.stringify(upvotes) %>;
+      var downvotes = <%- JSON.stringify(downvotes) %>;
+      var username = <%- JSON.stringify(username) %>;
+      var user = <%- JSON.stringify(user) %>;
+      var post_ids = <%- JSON.stringify(postIDs) %>;
+      var posts = <%- JSON.stringify(posts) %>;
+      var comments = <%- JSON.stringify(comments) %>;
+      var commentsInfo = <%- JSON.stringify(commentsInfo) %>;
+      var notifications = <%- JSON.stringify(notifications) %>;
+
+      var hash = <%- JSON.stringify(hash) %>;
+      console.log('Hash:');
+      console.log(hash);
+      console.log(username);
+      console.log(user);
+      console.log(posts);
+      console.log(comments);
+      console.log(commentsInfo);
+      console.log(upvotes);
+      console.log(downvotes);
+      console.log('Tags:');
+      console.log(allTags);
+      console.log('Notifications:');
+      console.log(notifications);
+      var currentID = 0;
+
+      $( document ).ready(function() {
+
+        if (notifications.length > 0) {
+          var num = notifications.length ;
+          $('#notification-list').prepend("<div id='notify-indicator'> <img src='/assets/notification.png' width='20px' height='20px' style='position: absolute; top: 2px; left: 100px';> <p id='num-notifications' style='color: white; position: absolute; top: 3px; left: 106px; font-size: 13px; text-align: center'>" + num + "</p> </div>");
+        } else {
+          var noNotification =  "<div>  <a class='dropdown-item' href='#' style='padding-left: 15px;'> No new notifications </a> </div> ";
+          $('#notifications').append(noNotification);
+        }
+        
+        for(i = 0; i < notifications.length; i++) {
+          var text = "";
+          if(notifications[i].type == 0) {
+            text = notifications[i].notifier_name + " downvoted your post";
+          } else if(notifications[i].type == 1) {
+            text = notifications[i].notifier_name + " upvoted your post";
+          } else if(notifications[i].type == 2) {
+            text = notifications[i].notifier_name + " answered your post";
+          }
+          var newNotification = "<li id='list-"+ notifications[i].notification_id +"'> <a id='notification-" + notifications[i].notification_id + "' class='dropdown-item active' href='#post-"+ notifications[i].post_id +"' style='padding-left: 15px;'>"+ text +"</a> </li>";
+          $('#notifications').append(newNotification);
+        }
+
+        $( ".dropdown-item" ).click(function() {
+          console.log('Clicked me!...............');
+          var id = this.id.replace('notification-','');
+          var notificationID = parseInt(id)
+          var listIndex = '#list-' + notificationID;
+
+          $('#'+this.id).removeClass('active');
+          notifications.splice(listIndex,1);
+          var num = notifications.length ;
+
+          if(num == 0) {
+            $('#notify-indicator').remove();
+          } else {
+            $('#num-notifications').text(notifications.length);
+          }
+          
+          $.ajax({
+            type: "POST",
+            url: '/deleteNotification',
+            data: {notification_id: notificationID}
+          }); 
+        });
+
+        for(i = posts.length-1; i >= 0; i--) {
+          var id = posts[i].post_id;
+          var top = "<div class='card card-spacing' style='width: 40rem; position: relative;' reputation='0' toggled='0'> <div class='card-body card-head'><a id='post-"+id+"' name='post-"+id+"'class='card-link card-col card-question' href='#' style='color: black;'>" + posts[i].header + "</a> <p class=card-text card-col' style='color: black;'>" + posts[i].content + "</p> <h9 class='card-text card-col'> By: </h9> <a href='/viewProfile/" + posts[i].email + "' style='color: black'>" +  posts[i].email + "</a> </div> <div class='card-col tags'> <ul id='tags-list-" + id + "' style='padding-left: 14px;'> <div> <hr style='margin-bottom:0;padding-bottom:0; width: 600px;'> </div> </ul> </div><div class='card-body vote'> <div class='container-fluid' style='padding: 0px; width: 38px; float: left;'> <div> <a id='upvote-" + id + "' class='card-link link-size arrow arrow-up' style='display: block; margin-bottom: 8px; cursor: pointer;'> </a> </div><div> <a id='downvote-" + id + "' class='card-link link-size arrow arrow-down' style='display: block; cursor: pointer;'> </a> </div></div><div class='container-fluid' style='height: 50px; width: 50px; display: inline-block; padding-left: 3px;'> <h4 id='vote-count-" + id + "' class='card-text card-col' style='position: relative; top: 18%'> 0 </h4></div> <button class='btn btn-primary' type='button' data-toggle='collapse' data-target='#collapse-comments-" + id + "' aria-expanded='false' aria-controls='collapse-comments-" + id + "' style='float: right; margin-top: 8px; height: 35px;'>Answers </button> <button id=" + "'" + id + "'" + " type='button' class='btn btn-primary answer' style='float: right; margin-top: 8px; height: 35px; margin-right: 3px;' data-toggle='modal' data-target='#ans-modal'> Add Answer </button></div> <div class='collapse' id='collapse-comments-" + id + "'> <div class='card-footer card-content' style='padding: 0px;'><div class='card' style='width: 40rem; padding: 0px;'><div class='card-footer card-content' style='padding: 0px;'><div class='card' style='width: 40rem; padding: 0px;'><div class='card-body' style='padding: 10px; padding-top: 20px; padding-bottom: 20px;'><div class='question-input input-group mb-3' style='color: black'> <ul class='comments' id=" + "'" + 'comment-' + id + "'" + ">";
+          
+          // Generate comments list in string mode
+          var commentList = '';
+          if (commentsInfo[id-1] != null) {
+            for(j = commentsInfo[id-1].length-1; j >= 0; j--) {
+              var comment = '<div> <img src="/assets/ben_frank.png" style="width: 50px; height: 50px;"> <div class="card" style="width: 30rem; padding: 0px; color: black; display: inline-block; margin-bottom: 20px;">' + (commentsInfo[id-1])[j] + ' </div>  </div>';
+              console.log('CommetssInfo');
+              console.log((commentsInfo[id-1])[j]);
+              commentList = commentList + comment;
+            }
+          }
+          
+
+
+          var bottom = '</ul></div></div></div></div></div></div></div>';
+
+          var card = top + commentList + bottom;
+
+          $('.posts').append(card);
+
+          // Update upvote and downvote status for current user
+          if (upvotes[i].length > 0 || downvotes.length > 0) {
+            // Set current counter
+            var voteID = '#vote-count-' + id;
+            var currCount = upvotes[i].length - downvotes[i].length;
+            $(voteID).text(currCount.toString());
+
+            var userVotedUp = false;
+            console.log(upvotes[i].length);
+            if (upvotes[i].length > 0) {
+              for (j = 0; j < upvotes[i].length; j++) {
+                console.log('Server: ' + (upvotes[i])[j].email);
+                console.log('Local: ' + user);
+                if ((upvotes[i])[j].email == user) {
+                  userVotedUp = true;
+                  break;
+                }
+              }
+            }
+            
+            console.log(downvotes[i].length);
+            var userVotedDown = false;
+            if (downvotes[i].length > 0) {
+              for (k = 0; k < downvotes[i].length; k++) {
+                console.log('Server: ' + (downvotes[i])[k].email);
+                console.log('Local: ' + user);
+                if ((downvotes[i])[k].email == user) {
+                  userVotedDown = true;
+                  break;
+                }
+              }
+            }
+            
+            console.log(upvotes[i].length);
+            console.log(userVotedUp);
+
+            console.log(downvotes[i].length);
+            console.log(userVotedDown);
+            if (userVotedUp) {
+              var upvoteID = '#upvote-' + id;
+              $(upvoteID).prop('disabled', true);
+              $(upvoteID).css('opacity', 1);
+            } else if (userVotedDown) {
+              var downvoteID = '#downvote-' + id;
+              $(downvoteID).prop('disabled', true);
+              $(downvoteID).css('opacity', 1);
+            }
+          }
+
+          // Populate hashtags
+          var tagID = '#tags-list-' + id; 
+          console.log(allTags[i]);
+          for(k = 0; k < allTags[i].length; k++) {
+            var tagBtn = "<button class='' btn btn-sm tag' style='margin-left: 6px; margin-top: 10px; padding:4px; background:black; border-radius: 10px; font-size: 12px;' type='button' data-toggle='modal' data-target='#tags-modal'>" + "#" + (allTags[i])[k] + "</button>";
+            $(tagID).append(tagBtn);
+          }  
+
+        }
+
+
+        $( ".card" ).each(function(i) {
+          $(this).find("#rep-number").text($(this).attr('reputation'));
+        });
+
+        $( ".answer" ).click(function() {
+          currentID = this.id;
+          console.log(currentID);
+        });
+
+        $( ".ans-btn" ).click(function() {
+          console.log('Modal answer');
+          console.log($('#input-ans').val());
+          console.log(currentID);
+
+          var comment = '<div> <img src="/assets/ben_frank.png" style="width: 50px; height: 50px;"> <div class="card" style="width: 30rem; padding: 0px; color: black; display: inline-block; margin-bottom: 20px;">' + $('#input-ans').val() + ' </div>  </div>';
+          var commentID = '#comment-' + currentID;
+
+          $(commentID).append(comment);
+          $.ajax({
+            type: "POST",
+            url: '/postAnswer',
+            data: {post_id: currentID, ans_content: $('#input-ans').val()}
+          });         
+        });
+
+        $('.home').addClass('active');
+
+        $(".arrow-up").on('click', function() {
+
+          var change = 0;
+
+          var post = true;
+
+          var arrowID = this.id.replace('upvote-', '');
+          console.log(arrowID);
+
+          var voteID = '#vote-count-' + arrowID;
+          var currCount = parseInt($(voteID).text());
+
+          var otherArrow = '#downvote-' + arrowID;
+
+          if (this.disabled === undefined || this.disabled == false) {
+            this.style.opacity = '1';
+            this.disabled = true;
+
+            if ($(otherArrow).prop('disabled')) {
+              console.log('First');
+              $(otherArrow).prop('disabled', false);
+              $(otherArrow).css('opacity', '0.1');
+              currCount = currCount + 2;
+              change = 2;
+            } else {
+              console.log('Second');
+              currCount = currCount + 1;
+              change = 1;
+            }
+
+            $(voteID).text(currCount.toString());
+            console.log('Up');
+            $.ajax({
+              type: "POST",
+              url: '/postVote',
+              data: {post_id: arrowID, vote: true, change: change}
+            }); 
+          }
+           
+        });
+
+        $(".arrow-down").on('click', function() {
+          var change = 0;
+                   
+          var arrowID = this.id.replace('downvote-', '');
+          console.log(arrowID);
+
+          var voteID = '#vote-count-' + arrowID;
+          var currCount = parseInt($(voteID).text());
+
+          var otherArrow = '#upvote-' + arrowID;
+          
+          if (this.disabled === undefined || this.disabled == false) {
+            this.style.opacity = '1';
+            this.disabled = true; 
+            
+            if ($(otherArrow).prop('disabled')) {
+              console.log('First');
+              $(otherArrow).prop('disabled', false);
+              $(otherArrow).css('opacity', '0.1');
+              currCount = currCount - 2;
+              change = -2;
+            } else {
+              console.log('Second');
+              currCount = currCount - 1;
+              change = -1;
+            }          
+
+            $(voteID).text(currCount.toString());          
+            console.log('Down');
+            $.ajax({
+              type: "POST",
+              url: '/postVote',
+              data: {post_id: arrowID, vote: false, change: change}
+            });  
+          }
+          
+        });
+
+        if (hash.length > 0) {
+          var anchor = "#" + hash;
+          location.hash = anchor;
+        }
+
+      });
+    </script>
+
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home"><img src="/assets/ben_frank.png" style="width: 50px; height: 45px;"></a>
+        <div class="collapse navbar-collapse" id="navbarText" >
+          
+          <ul class="main-nav navbar-nav mr-auto">
+            <li class="home nav-item">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/settings">Settings</a>
+            </li>
+            <li class="nav-item">
+              <div id="notification-list" class="dropdown">
+                <a id="dropdownMenuButton" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notifications</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <ul id="notifications" style="float: left; padding-left: 0px;">
+                  </ul>
+                </div>
+              </div>
+              
+            </li>
+          </ul>
+
+          <span class="navbar-text">
+            <form method="post" action="/logout">
+              <button type="submit" class="btn btn-light">Signout</button>         
+            </form>
+          </span>
+
+        </div>
+      </nav>
+    </div>
+
+    <div class="container-fluid background_home">
+      <div class="row">
+        <div class="col-lg-3 col-sm-4 col-xs-12"> 
+        </div>
+        
+        <div class="col-md-auto col-sm-4 col-xs-12"> 
+
+          <ul class="posts">
+
+            <div class="question-card card" style="width: 40rem;">
+              <div class="card-body">
+                <div mclass="question-input input-group mb-3">
+                  <input id = "post-text" type="text" class="form-control" placeholder="Post a question" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#post-modal"> 
+                      Post  
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card card-spacing" style="width: 40rem; position: relative;" reputation="0" toggled="0">
+
+              <div class="card-body card-head">
+                <a class="card-link card-col card-question" href="#"> A Sample Question </a>
+                <p class="card-text card-col"> A Sample Description or Explanation </p>
+              </div>              
+
+              <div class="card-col tags">
+                <ul id="tags-list" style="padding-left: 14px;">
+                  <button class=" btn btn-sm tag" style="margin-left: 6px; margin-top: 10px; padding:4px; background:black; border-radius: 10px; font-size: 12px;" type="button" data-toggle="modal" data-target="#tags-modal"> #faketag </button>
+                </ul>
+                
+                <div> <hr style="margin-bottom:0;padding-bottom:0; width: 600px;" >  </div>
+              </div>
+
+              <div class="card-body vote">
+                <div class="container-fluid" style="padding: 0px; width: 38px; float: left;"> 
+                  <div> <a id="upvote" class="card-link link-size arrow arrow-up" style="display: block; margin-bottom: 8px; cursor: pointer;"> </a> </div>
+                  <div> <a id="downvote" class="card-link link-size arrow arrow-down" style="display: block; cursor: pointer;"> </a> </div>
+                </div>
+
+                <div class="container-fluid" style="height: 50px; width: 50px; display: inline-block; padding-left: 3px;">
+                  <h4 id="vote-count" class="card-text card-col" style="position: relative; top: 18%"> 0 </h4>
+                </div>
+
+                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-comments" aria-expanded="false" aria-controls="collapse-comments" style="float: right; margin-top: 8px; height: 35px;">
+                  Answers
+                 </button>
+
+                 <button type="button" class="btn btn-primary answer" style="float: right; margin-top: 8px; height: 35px; margin-right: 3px;" data-toggle="modal" data-target="#ans-modal"> Add Answer </button> 
+
+              </div>
+              <div class="collapse" id="collapse-comments">
+                <div class="card-footer card-content" style="padding: 0px;">
+                  <div class="card" style="width: 40rem; padding: 0px;">
+                    <div class="card-footer card-content" style="padding: 0px;">
+                      <div class="card" style="width: 40rem; padding: 0px;">
+                        <div class="card-body" style="padding: 10px; padding-top: 20px; padding-bottom: 20px;">
+                          <div class="question-input input-group mb-3" style="color: black">
+                            <ul class="comments">
+
+                              <!-- Insert list of comments here -->
+                              <div> <img src="/assets/ben_frank.png" style="width: 50px; height: 50px;"> <div class="card" style="width: 30rem; padding: 0px; color: black; display: inline-block; margin-bottom: 20px;"> Sample Comment </div>  </div>;
+
+                              <div> <img src="/assets/ben_frank.png" style="width: 50px; height: 50px;"> <div class="card" style="width: 30rem; padding: 0px; color: black; display: inline-block; margin-bottom: 20px;"> Sample Comment Two </div>  </div>;
+
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+            </div>
+
+          </ul>
+          
+        </div>
+      
+      </div>
+      
+    </div>
+  </body>
