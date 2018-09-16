@@ -11,9 +11,9 @@ var passportSetup = require('../config/passport-setup');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'cis350.c5rvqqjl9c91.us-east-1.rds.amazonaws.com',
-  user     : 'cis350team46',
-  password : 'cis350askben',
-  database : 'cis350'
+  user     : '',
+  password : '',
+  database : ''
 });
 
 var db = require('../public/js/db_api');
