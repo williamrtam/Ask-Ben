@@ -1,1 +1,1 @@
-# 350S18-46-AskBen
+CIS 350 Final Project. Message board like Quora where users can post questions and answers. Users have profiles, can chat in real time with friends, search for posts and answers, see analytics on post activity, and more. 
